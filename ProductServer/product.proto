@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+// 指定生成代码的包名，这会影响生成的代码结构。
+option go_package = ".;product";
+// 定义服务
+service Product {
+  // 定义一个RPC方法。
+  rpc ProductPro (ProductRequest) returns (ProductResponse) {}
+}
+
+// 定义SayHello方法的请求消息
+message ProductRequest {
+  int64 product_id = 1; // 请求包含一个名字字段
+  int64 number=2;
+}
+
+// 定义SayHello方法的响应消息
+message ProductResponse {
+  string msg=1; // 响应包含一个消息字段
+}

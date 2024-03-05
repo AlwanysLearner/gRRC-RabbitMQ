@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+// 指定生成代码的包名，这会影响生成的代码结构。
+option go_package = ".;order";
+// 定义服务
+service Order {
+  // 定义一个RPC方法。
+  rpc MakeOrder (OrderRequest) returns (OrderResponse) {}
+}
+
+// 定义SayHello方法的请求消息
+message OrderRequest {
+  int64 product_id = 1; // 请求包含一个名字字段
+  int64 number=2;
+}
+
+// 定义SayHello方法的响应消息
+message OrderResponse {
+  uint64 order_id=1; // 响应包含一个消息字段
+}
