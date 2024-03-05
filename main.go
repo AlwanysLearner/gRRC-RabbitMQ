@@ -9,7 +9,6 @@ import (
 
 func main() {
 	go product.InitProduct()
-	fmt.Println(1111)
 	go order.InitOrder()
 	r := gin.Default()
 	r.POST("/order", order.HttpOrderRequest)
